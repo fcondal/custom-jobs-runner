@@ -76,6 +76,12 @@ Set permissions to storage and cache folders.
 docker exec -ti php-fpm chmod -R 775 /application/storage /application/bootstrap/cache
 ```
 
+Generate application key
+
+```bash
+docker exec -ti php-fpm php artisan key:generate
+```
+
 Execute the following command to run scheduler.
 
 ```bash
@@ -92,9 +98,18 @@ Login with the following credentials on http://localhost:30000 to get access to 
 
 ## Environment Variables
 
-The following environment variable is used to set the retries quantity per execution job. If this variable is not set, it will take 1 as default value.
+`CUSTOM_JOBS_RETRIES` environment variable is used to set the retries quantity per execution job. If this variable is not set, it will take 1 as default value.
 
-`CUSTOM_JOBS_RETRIES`
+```
+CUSTOM_JOBS_RETRIES
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=test
+DB_USERNAME=test
+DB_PASSWORD=test
+```
 
 
 ## Documentation
@@ -111,7 +126,7 @@ Parameters of the method:
 
 Classes that are located in `App\CustomJobs` are allowed to be executed with `runBackgroundJob`.
 
-There is a table called `custom_jobs` where are stored all the custom jobs information with an status associated (pending, running, completed, failed).
+There is a table called `custom_jobs` where are stored all the custom jobs information with a status associated (pending, running, completed, failed).
 Every status is logged on background_jobs.log located in `storage/logs`.
 Failed status is also logged on background_jobs_errors.log and is localted in the same folder.
 
@@ -253,3 +268,8 @@ Output (`background_jobs_errors.log`):
 ```
 [2024-11-14 05:33:46] local.ERROR: Failed Custom Job: App\CustomJobs\None::executeNone - Error: Invalid parameters for method executeNone.
 ```
+
+## Screenshots
+
+![Login Screenshot](https://i.ibb.co/xH7FTH0/Screenshot-from-2024-11-14-03-14-48.png)
+![Custom Jobs Screenshot](https://i.ibb.co/rGxfTy1/Screenshot-from-2024-11-14-03-18-09.png)

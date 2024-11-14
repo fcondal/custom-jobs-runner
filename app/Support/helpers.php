@@ -1,9 +1,6 @@
 <?php
 
-namespace App\Support;
-
 use App\Models\CustomJob;
-use Exception;
 use Illuminate\Support\Facades\Log;
 
 if (!function_exists('runBackgroundJob')) {

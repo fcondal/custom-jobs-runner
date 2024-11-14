@@ -143,6 +143,8 @@ If you'd like to test priority, the best way to do it is:
 
 ## Usage/Examples
 
+Check if you have the schedule running. If not, execute `docker exec -ti php-fpm php artisan schedule:work`
+
 Execute on Tinker `docker exec -ti php-fpm php artisan tinker`
 
 ### Success

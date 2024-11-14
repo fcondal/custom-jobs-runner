@@ -11,6 +11,8 @@ Custom system to execute PHP classes as background jobs, independent of Laravel'
 
 ## Run Locally
 
+It's necessary to have installed *Docker*.
+
 Clone the project.
 
 ```bash
@@ -275,3 +277,10 @@ Output (`background_jobs_errors.log`):
 
 ![Login Screenshot](https://i.ibb.co/xH7FTH0/Screenshot-from-2024-11-14-03-14-48.png)
 ![Custom Jobs Screenshot](https://i.ibb.co/rGxfTy1/Screenshot-from-2024-11-14-03-18-09.png)
+
+## Potencial improvements
+
+- Develop feature tests for controllers
+- Develop unit tests for command, job, action, request form, etc.
+- Improve Login and Dashboard CSS
+- Improve custom job parameters validation logic

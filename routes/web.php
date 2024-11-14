@@ -8,10 +8,8 @@ use App\Models\CustomJob;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('login')->group(function(Router $route) {
-    $route->get('/', [LoginController::class, 'show'])->name(RouteNames::LOGIN_SHOW);
-    $route->post('/', [LoginController::class, 'store'])->name(RouteNames::LOGIN_STORE);
-});
+Route::get('/', [LoginController::class, 'show'])->name(RouteNames::LOGIN_SHOW);
+Route::post('/', [LoginController::class, 'store'])->name(RouteNames::LOGIN_STORE);
 
 Route::post('logout', [LogoutController::class, 'store'])->name(RouteNames::LOGOUT_STORE);
 

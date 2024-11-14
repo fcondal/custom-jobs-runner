@@ -42,10 +42,6 @@ class ValidateParameters
         if (!$this->hasValidParameters()) {
             throw new Exception("Invalid parameters for method $this->method.");
         }
-
-        if (!$this->hasAValidPriority()) {
-            throw new Exception("Priority $this->priority is invalid");
-        }
     }
 
     private function hasAValidClassName(): bool
@@ -93,10 +89,5 @@ class ValidateParameters
         }
 
         return true;
-    }
-
-    private function hasAValidPriority(): bool
-    {
-        return in_array($this->priority, CustomJob::PRIORITY_ALL, true);
     }
 }
